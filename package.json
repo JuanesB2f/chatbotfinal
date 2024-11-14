@@ -1,0 +1,25 @@
+{
+    "name": "base-bailey-json",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "pre-copy": "cd .. && npm run  copy.lib base-baileys-json",
+        "start": "node app.js"
+    },
+    "keywords": [],
+    "dependencies": {
+        "@bot-whatsapp/bot": "^0.1.30",
+        "@bot-whatsapp/cli": "^0.1.30",
+        "@bot-whatsapp/database": "^0.1.30",
+        "@bot-whatsapp/portal": "^0.1.30",
+        "@bot-whatsapp/provider": "^0.1.30",
+        "@whiskeysockets/baileys": "^6.4.0",
+        "aki-api": "^7.0.1",
+        "dotenv-safe": "^8.2.0",
+        "mime-types": "2.1.35",
+        "wa-sticker-formatter": "4.4.4"
+    },
+    "author": "",
+    "license": "ISC"
+}
