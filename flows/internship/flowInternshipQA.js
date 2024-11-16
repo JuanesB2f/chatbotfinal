@@ -39,24 +39,20 @@ const PREGUNTAS_FRECUENTES = {
         ]
     },
     '4': {
-        pregunta: 'Evaluación y seguimiento',
+        pregunta: 'Evaluación de practicas',
         respuesta: [
-            '📊 *Sistema de Evaluación y Seguimiento:*',
+            '📊 *Sistema de Evaluación de practicas:*',
             '',
-            '1️⃣ *Informes Mensuales:*',
-            '• Formato F003 actualizado',
-            '• Evidencias de actividades',
-            '• Firma del supervisor',
+            '1️⃣ *Reportes de Avance:*',
+            '• El estudiante debera presentar dos reportes parciales y un informe final de sus actividades',
+            '• El tutor academico asignado al inicio de la practica en coordinacion de practicas profesionales, revisara cada reporte y proporcionara retroalimentacion.',
             '',
-            '2️⃣ *Evaluaciones:*',
-            '• Evaluación mensual del supervisor',
-            '• Autoevaluación del estudiante',
-            '• Evaluación del tutor académico',
+            '2️⃣ *Evaluacion por parte de la empresa:*',
+            '• La empresa evaluara al estudiante en aspectos como responsabilidad, desempreño, habilidades tecnicas y relaciones interpersonales.',
+            '• Se utilizara un formato de evaluacion estandar proporcionado por la universidad.',            
             '',
-            '3️⃣ *Informe Final:*',
-            '• Formato F004 completo',
-            '• Presentación de resultados',
-            '• Certificación de la empresa'
+            '3️⃣ *Evaluacion Final:*',
+            '• La evaluacion final sera realizada por el tutor academico, basandose en los repórtes de avance, el informe final y la evaluacion de la empresa.'         
         ]
     },
     '5': {

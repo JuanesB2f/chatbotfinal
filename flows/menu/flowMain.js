@@ -9,7 +9,7 @@ const flowContact = require('./flowContact')
 const flowHelp = require('./flowHelp')
 
 // Definimos flowMain y keywordHandler
-const flowMain = addKeyword(['hola', 'menu', 'inicio'])
+const flowMain = addKeyword(['hola', 'menu','menú', 'inicio'])
     .addAnswer('¡Bienvenido al Chatbot de Prácticas Universitarias IUDC!, Recuerda que el proceso de practicas es obligatorio en todos los programas para tu grado 👋')
     .addAnswer(
         [
