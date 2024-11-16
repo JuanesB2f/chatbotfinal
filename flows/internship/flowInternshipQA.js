@@ -4,78 +4,38 @@ const PREGUNTAS_FRECUENTES = {
     '1': {
         pregunta: 'Requisitos para prácticas',
         respuesta: [
-            '📋 *Requisitos para iniciar prácticas:*',
-            '',
-            '1️⃣ *Requisitos Académicos:*',
-            '• Ser estudiante activo',
-            '• Haber cursado el 60% de los créditos',
-            '• Promedio mínimo de 3.8',
-            '• No tener sanciones disciplinarias',
-            '',
-            '2️⃣ *Documentación Requerida:*',
-            '• Hoja de vida actualizada',
-            '• Carta de presentación',
-            '• Seguro estudiantil vigente',
-            '• Carné de vacunación (según empresa)',
-            '',
-            '3️⃣ *Requisitos Administrativos:*',
-            '• Matrícula del semestre vigente',
-            '• Paz y salvo financiero',
-            '• Inscripción en el sistema de prácticas'
-        ]
+            "*Requisitos para iniciar prácticas:*📌 *Académicos:*",
+            "• Estar al día financieramente",
+            "• Promedio mínimo de 3.8",
+            "• 60% de créditos aprobados (apartir de septimo periodo academico)",
+            "",
+            "📌 *Formatos Requeridos:*",
+            "• FOR GA 17 (Formato de aceptacion)",
+            "• Formato de control de asistencia",
+            "• FOR GA 05 (Seguimiento de practica laboral)",
+            "",
+            "📌 *Adicionales:*",
+            "• Copia de la cedula del representante legal",
+            "• Copia camara de comercio",
+            "• Certificacion o carta laboral especificando las funciones",
+            "• Los documentos se deben traer en pdf o deben ser enviados al correo practicas.iudc@gmail.com"]
     },
     '2': {
-        pregunta: 'Proceso de ARL',
+        pregunta: 'Proceso de afiliacion ARL',
         respuesta: [
-            '🏥 *Proceso completo de ARL:*',
-            '',
-            '1️⃣ *Solicitud Inicial:*',
-            '• Descargar formato de ARL',
-            '• Completar datos personales',
-            '• Adjuntar documentos de identidad',
-            '• Incluir información de la empresa',
-            '',
-            '2️⃣ *Documentos Necesarios:*',
-            '• Copia de cédula',
-            '• Carta de aceptación empresarial',
-            '• Convenio firmado',
-            '• Formato de solicitud ARL',
-            '',
-            '3️⃣ *Proceso de Renovación:*',
-            '• Solicitar 5 días antes del vencimiento',
-            '• Adjuntar carta de la empresa',
-            '• Informe de actividades actual',
-            '',
-            '⚠️ *Importante:*',
-            '• La ARL debe estar activa antes de iniciar',
-            '• Renovar antes del vencimiento',
-            '• Informar cambios de horario o sede'
+            '🏥 *Proceso de afiliciacion ARL:*',
+            '• El estudiante debe enviar la fotocopia de cedula ampliada al 150%, el certificado de la eps no mayor a 30 dias y directamente de la eps (no se admite formato ADRES) ademas de adjuntar los documentos mencionados enviar documentos al correo practicas.iudc@gmail.com\n• Nombre completo\n• tipo de documento de identidad\n• Numero de identificacion\n• Programa academico\n• Jornada\n• Numero de contacto\n• Direccion de domicilio\n• Correo electronico\n• Año en el que se matriculo\n• Fecha de ingreso a practica\nEn caso de emergencia:\n• Nombre \n• Parentesco\n• Numero de contacto',
         ]
     },
     '3': {
         pregunta: 'Modalidades de práctica',
         respuesta: [
             '👨‍💼 *Modalidades de Práctica Disponibles:*',
-            '',
-            '1️⃣ *Práctica Empresarial:*',
-            '• Tiempo completo en empresa',
-            '• Remuneración obligatoria',
-            '• Duración: 6 meses',
-            '',
-            '2️⃣ *Práctica Social:*',
-            '• Medio tiempo',
-            '• Sin remuneración obligatoria',
-            '• Duración: 6-12 meses',
-            '',
-            '3️⃣ *Práctica Investigativa:*',
-            '• Vinculación a grupo de investigación',
-            '• Horario flexible',
-            '• Duración según proyecto',
-            '',
-            '4️⃣ *Práctica Internacional:*',
-            '• Tiempo completo',
-            '• Requisitos adicionales',
-            '• Duración según convenio'
+            '1️⃣ Contrato de Aprendizaje:\n• Acuerdo formal entre el estudiante y la empresa donde el estudiante recibe formacion practica y teorica, para ello el departamento de practicas profesionales conservan las hojas de vida de los estudiantes que cumplen con los requisitos academicos para presentar el aval entre las empresas. ',
+            '2️⃣ Vinculo Laboral:\n•Relacion de trabajo formal entre el estudiante y la empresa, donde el estudiante desempeña funciones laborales y recibe una remuneración. Este vinculo se rige por la legislación laboral correspondiente.',
+            '3️⃣ Convenio:\n• Acuerdo entre la universidad y una entidad externa que establece los terminos bajo los cuales se realizan las practicas.\nEste documento detalla el aspecto como objetivos, responsabilidades y condiciones para los estudiantes.',
+            '4️⃣ Pasantia Laboral :\n• Modalidad en la cual los estudiantes deben realizar practicas en una empresa por un tiempo determinado, generalmente con el objetivo de aplicar lo aprendido en la academia.\nLas pasantias pueden ser remuneradas y suelen tener un enfoque mas practico.',
+
         ]
     },
     '4': {
@@ -137,32 +97,32 @@ const flowInternshipQA = addKeyword(['1', 'preguntas', 'faq'])
         '',
         '📝 Escribe el número de tu consulta'
     ],
-    { capture: true },
-    async (ctx, { flowDynamic, gotoFlow }) => {
-        const userResponse = ctx.body.trim().toLowerCase()
+        { capture: true },
+        async (ctx, { flowDynamic, gotoFlow }) => {
+            const userResponse = ctx.body.trim().toLowerCase()
 
-        if (userResponse === 'menu') {
-            const flowMain = require('../menu/flowMain')
-            return gotoFlow(flowMain)
-        }
+            if (userResponse === 'menu') {
+                const flowMain = require('../menu/flowMain')
+                return gotoFlow(flowMain)
+            }
 
-        const pregunta = PREGUNTAS_FRECUENTES[userResponse]
-        if (pregunta) {
-            await flowDynamic(pregunta.respuesta)
+            const pregunta = PREGUNTAS_FRECUENTES[userResponse]
+            if (pregunta) {
+                await flowDynamic(pregunta.respuesta)
+                await flowDynamic([
+                    '',
+                    '¿Deseas consultar algo más?',
+                    '',
+                    '1-5: Seleccionar otra pregunta',
+                    'Escribe "menu" para volver al menú principal'
+                ])
+                return
+            }
+
             await flowDynamic([
-                '',
-                '¿Deseas consultar algo más?',
-                '',
-                '1-5: Seleccionar otra pregunta',
-                'Escribe "menu" para volver al menú principal'
+                '❌ Opción no válida',
+                'Por favor, selecciona un número del 1 al 5 o escribe "menu" para volver al menú principal'
             ])
-            return
-        }
-
-        await flowDynamic([
-            '❌ Opción no válida',
-            'Por favor, selecciona un número del 1 al 5 o escribe "menu" para volver al menú principal'
-        ])
-    })
+        })
 
 module.exports = flowInternshipQA

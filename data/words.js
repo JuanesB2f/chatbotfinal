@@ -25,7 +25,7 @@ const keywords = {
         'consulta', 'problema', 'error'
     ],
     menu: [
-        'menu', 'inicio', 'principal', 'volver', 'regresar', 'atras',
+        'menu','menú', 'Inicio','inicio', 'principal', 'volver', 'regresar', 'atras',
         'comenzar', 'empezar', 'reiniciar', 'opciones', 'lista'
     ]
 }
